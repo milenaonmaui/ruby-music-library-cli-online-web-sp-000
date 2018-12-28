@@ -38,8 +38,8 @@ end
    self.all.clear
  end
 
- def self.create(song_name)
-   song = self.new(song_name)
+ def self.create(song_name, artist = nil, genre = nil)
+   song = self.new(song_name, artist = nil, genre = nil )
    song.name = song_name
    song.save
    song
