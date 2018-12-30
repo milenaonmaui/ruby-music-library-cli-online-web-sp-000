@@ -87,13 +87,12 @@ class MusicLibraryController
      user_input = gets.strip
      int_input = user_input.to_i
      #binding.pry
-
-     if ((int_input > 0) && (int_input <= Song.all.length))
-       songs_sorted = Song.all.uniq.sort_by(&:name)
+     songs_sorted = Song.all.uniq.sort_by(&:name)
+     if ((int_input > 0) && (int_input <= songs_sorted.length))
        chosen_song = songs_sorted[int_input-1]
        puts "Playing #{chosen_song.name} by #{chosen_song.artist.name}"
      end
+     #binding.pry
    end
-
 
 end
